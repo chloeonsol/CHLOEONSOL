@@ -1,14 +1,28 @@
-import './Footer.css'; // Importamos el archivo de estilos
-import logo from '../assets/logo.png'; // Ruta del logo
+import { useState, useEffect } from 'react';
+import './Footer.css';
+import './FooterMobile.css'; // Importa el archivo CSS para la versión móvil
+import logo from '../assets/logo.png';
 
 const Footer = () => {
+  const [isMobile, setIsMobile] = useState(false); // Detecta si es móvil
+
+  // Detectar si es versión móvil
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Móvil: ancho <= 768px
+    };
+    handleResize(); // Detectar el tamaño inicial
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <footer className="footer">
+    <footer className={isMobile ? "footer-mobile" : "footer"}>
       <div className="footer-logo-container">
         <img src={logo} alt="CHLOE Logo" className="footer-logo" />
       </div>
 
-      <div className="footer-links">
+      <div className={isMobile ? "footer-links-mobile" : "footer-links"}>
         <a href="https://t.me/chloe_official_cto" target="_blank" rel="noopener noreferrer" className="footer-link">
           Telegram
         </a>

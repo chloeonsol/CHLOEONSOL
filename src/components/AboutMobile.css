@@ -1,0 +1,145 @@
+/* Fondo oscuro con formas abstractas para la sección (versión móvil) */
+.about-mobile-container {
+    background: linear-gradient(135deg, #202B2F, #131a1d); /* Fondo oscuro */
+    background-size: 300% 300%; /* Animamos el fondo */
+    padding: 30px 10px; /* Ajustamos el padding para móviles */
+    position: relative;
+    animation: abstractBackground 10s ease-in-out infinite; /* Animación del fondo */
+    z-index: 2; /* Asegura que el contenido no quede por debajo de otros elementos */
+    overflow-x: hidden; /* Evitar desplazamiento horizontal */
+  }
+  
+  /* Animación para el fondo abstracto */
+  @keyframes abstractBackground {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+  
+  /* Formas abstractas sutiles */
+  .about-mobile-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/abstract-shape.jpg'); /* Aquí pondremos una forma abstracta */
+    background-size: cover;
+    opacity: 0.1; /* Sutileza en el fondo */
+    z-index: 1;
+  }
+  
+  /* Título de la sección About */
+  .about-title-mobile {
+    font-size: 5vh; /* Reducimos el tamaño del título en móviles */
+    font-family: 'Bubble', cursive, sans-serif;
+    color: #EF72D7; /* Morado brillante */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Sombra sutil */
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 0px;
+  }
+  
+  /* Contenedor para la descripción del meme */
+  .about-text-container-mobile {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad */
+    border: 5px solid #EF72D7; /* Borde grueso morado */
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px auto;
+    width: 90%; /* Ajustamos el ancho para móviles */
+    max-width: 1000px; /* Maximo ancho para evitar desbordes */
+  }
+  
+  /* Descripción del texto */
+  .about-text-mobile {
+    font-size: 14px; /* Reducimos el tamaño de la fuente para móviles */
+    font-family: 'Bubble', cursive, sans-serif;
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilización del enlace como botón */
+  .about-button-mobile {
+    background: linear-gradient(145deg, #6a4c9c, #5b3c8d);
+    color: white;
+    font-family: 'Bubble', cursive, sans-serif;
+    font-size: 16px; /* Reducimos el tamaño del botón */
+    font-weight: bold;
+    border: 3px solid #280000;
+    border-radius: 30px;
+    padding: 12px 20px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto; /* Centra el enlace */
+    text-decoration: none;
+    position: relative;
+    z-index: 10; /* Asegura que esté encima de otros elementos */
+  }
+  
+  .about-button-mobile:hover {
+    background-color: #6a4c9c;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Carousel de memes */
+  .carousel-container-mobile {
+    overflow-x: auto;  /* Habilitamos el desplazamiento horizontal */
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .carousel-mobile {
+    display: flex;
+    gap: 10px; /* Menor espacio entre los elementos */
+    width: auto; /* Ancho automático para ajustarse al contenido */
+    padding-bottom: 10px; /* Añadimos un poco de espacio en la parte inferior */
+  }
+  
+  .carousel-item-mobile {
+    flex: 0 0 auto; /* No se estira, mantiene el tamaño */
+    width: 90%; /* Ajustamos el tamaño para móviles */
+    max-width: 300px; /* Ajustamos el ancho máximo de cada item */
+  }
+  
+  .carousel-media-mobile {
+    width: 100%;
+    height: 250px; /* Altura ajustada */
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 1s ease, rotate 0.3s ease;
+  }
+/* Efecto de inclinación de las imágenes */
+.carousel-media-mobile:nth-child(odd) {
+  transform: rotate(-5deg);
+}
+
+.carousel-media-mobile:nth-child(even) {
+  transform: rotate(5deg);
+}
+
+.carousel-media-mobile:hover {
+  transform: scale(1.05) rotate(0deg);
+  cursor: pointer;
+}

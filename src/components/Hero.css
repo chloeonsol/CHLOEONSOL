@@ -5,7 +5,7 @@
     font-style: normal;
   }
   .hero-container {
-    background-image: url('/public/backview.png');
+    background-image: url('/backview.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -31,8 +31,21 @@
     text-transform: uppercase;
     display: inline-block;
     margin-left: 35%;
+    animation: floatAnimation 3s ease-in-out infinite; /* Animación de flotación */
+
   }
-  
+    /* Animación para el efecto flotante de la imagen */
+    @keyframes floatAnimation {
+      0% {
+        transform: translateY(30px); /* Posición inicial */
+      }
+      50% {
+        transform: translateY(5px); /* Mueve hacia arriba */
+      }
+      100% {
+        transform: translateY(30px); /* Vuelve a la posición original */
+      }
+    }
   .hero-text {
     font-size: 35px; /* Ajustamos el tamaño del texto */
     font-family: 'Bubble', cursive, sans-serif;
@@ -223,4 +236,6 @@
   .social-button:nth-child(5) {
     background-image: url('/dexs.avif'); /* Quinto botón: Dexs (avif) */
   }
+  
+
   
