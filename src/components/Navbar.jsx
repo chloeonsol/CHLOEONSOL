@@ -9,6 +9,7 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false); // Para detectar si es móvil
   const menuRef = useRef(null); // Referencia al menú desplegable
 
+
   // Detecta el tamaño de la pantalla
   useEffect(() => {
     const handleResize = () => {
@@ -19,10 +20,7 @@ const Navbar = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Función para abrir y cerrar el menú
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+
 
   // Cerrar el menú al hacer clic fuera de él
   useEffect(() => {
@@ -35,25 +33,29 @@ const Navbar = () => {
     return () => document.removeEventListener('click', handleClickOutside);
   }, []);
 
+
+
   return (
     <div className={`navbar ${isMobile ? 'mobile-navbar' : 'desktop-navbar'}`}>
       <div className="navbar-logo-container">
         <img src={isMobile ? logoMobile : logo} alt="Logo" className={isMobile ? "navbar-logo-mobile" : "navbar-logo"} />
       </div>
 
-      {/* Menú desplegable de móvil */}
-      {isMobile ? (
+       {/* Menú desplegable de móvil */}
+       {isMobile ? (
         <>
-          {/* Icono hamburguesa */}
-          <div className={`hamburger-icon-mobile ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
-            ☰
-          </div>
+          {/* Botón Buy en la esquina superior derecha */}
+          <a 
+            href="https://jup.ag/swap/SOL-7DdHyxLZQuudndfrX3ZDDqgK6zPFbm17wGwKJqgjpump" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="navbar-button-mobile-top-right">
+            Buy
+          </a>
 
           {/* Menú de navegación cuando está abierto */}
           {menuOpen && (
             <div className="navbar-menu-mobile open" ref={menuRef}>
-              <button className="navbar-button-mobile">Home</button>
-              <button className="navbar-button-mobile">About</button>
               <a href="https://jup.ag/swap/SOL-7DdHyxLZQuudndfrX3ZDDqgK6zPFbm17wGwKJqgjpump" target="_blank" rel="noopener noreferrer" className="navbar-button-mobile">Buy</a>
             </div>
           )}
@@ -61,8 +63,6 @@ const Navbar = () => {
       ) : (
         // Menú de escritorio
         <div className="navbar-buttons-container">
-          <button className="navbar-button">Home</button>
-          <button className="navbar-button">About</button>
           <a href="https://jup.ag/swap/SOL-7DdHyxLZQuudndfrX3ZDDqgK6zPFbm17wGwKJqgjpump" target="_blank" rel="noopener noreferrer" className="navbar-button">Buy</a>
         </div>
       )}

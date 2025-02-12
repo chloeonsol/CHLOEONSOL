@@ -26,6 +26,7 @@ const Hero = () => {
   }, []);
 
   return (
+    
     <div id="hero" className={isMobile ? "hero-container-mobile-version" : "hero-container"}>
       <div className="hero-content">
         <img src={chloeImage} alt="CHLOE" className={isMobile ? "hero-title-mobile-version" : "hero-title"} />
