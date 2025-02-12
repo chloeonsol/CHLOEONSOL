@@ -54,12 +54,12 @@ const Hero = () => {
         </div>
         <div className={isMobile ? "social-buttons-container-mobile" : "social-buttons-container"}>
           {/* Primer botón: Telegram */}
-          <a href="https://t.me/chloe_official_cto" target="_blank" rel="noopener noreferrer">
+          <a href="https://t.me/chloeofficalportal" target="_blank" rel="noopener noreferrer">
             <button className={isMobile ? "social-button-mobile" : "social-button"} style={{ backgroundImage: 'url(/tg.avif)' }}></button>
           </a>
 
           {/* Segundo botón: X */}
-          <a href="https://x.com/chloe_off_cto" target="_blank" rel="noopener noreferrer">
+          <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
             <button className={isMobile ? "social-button-mobile" : "social-button"} style={{ backgroundImage: 'url(/X.jpg)' }}></button>
           </a>
 

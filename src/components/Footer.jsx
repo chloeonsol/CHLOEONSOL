@@ -23,10 +23,10 @@ const Footer = () => {
       </div>
 
       <div className={isMobile ? "footer-links-mobile" : "footer-links"}>
-        <a href="https://t.me/chloe_official_cto" target="_blank" rel="noopener noreferrer" className="footer-link">
+        <a href="https://t.me/chloeofficalportal" target="_blank" rel="noopener noreferrer" className="footer-link">
           Telegram
         </a>
-        <a href="https://x.com/chloe_off_cto" target="_blank" rel="noopener noreferrer" className="footer-link">
+        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" className="footer-link">
           X (Twitter)
         </a>
         <a href="https://jup.ag/swap/SOL-7DdHyxLZQuudndfrX3ZDDqgK6zPFbm17wGwKJqgjpump" target="_blank" rel="noopener noreferrer" className="footer-link">
