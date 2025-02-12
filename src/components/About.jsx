@@ -100,7 +100,6 @@ const About = () => {
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
           onTouchMove={handleTouchMove}
-          style={{ cursor: "grab" }}
         >
           {memes.map((meme, index) => (
             <div key={index} className={isMobile ? "carousel-item-mobile" : "carousel-item"}>

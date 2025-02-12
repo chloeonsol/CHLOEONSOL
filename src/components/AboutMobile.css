@@ -100,46 +100,45 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
   }
   
-  /* Carousel de memes */
-  .carousel-container-mobile {
-    overflow-x: auto;  /* Habilitamos el desplazamiento horizontal */
-    width: 100%;
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .carousel-mobile {
-    display: flex;
-    gap: 10px; /* Menor espacio entre los elementos */
-    width: auto; /* Ancho automático para ajustarse al contenido */
-    padding-bottom: 10px; /* Añadimos un poco de espacio en la parte inferior */
-  }
-  
-  .carousel-item-mobile {
-    flex: 0 0 auto; /* No se estira, mantiene el tamaño */
-    width: 90%; /* Ajustamos el tamaño para móviles */
-    max-width: 300px; /* Ajustamos el ancho máximo de cada item */
-  }
-  
-  .carousel-media-mobile {
-    width: 100%;
-    height: 250px; /* Altura ajustada */
-    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    transition: transform 1s ease, rotate 0.3s ease;
-  }
-/* Efecto de inclinación de las imágenes */
-.carousel-media-mobile:nth-child(odd) {
-  transform: rotate(-5deg);
+  /* Carrusel contenedor (versión móvil) */
+.carousel-container-mobile {
+  width: 250%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;  /* No mostramos las barras de desplazamiento */
 }
 
-.carousel-media-mobile:nth-child(even) {
-  transform: rotate(5deg);
+/* Carrusel con animación de desplazamiento automático */
+.carousel-mobile {
+  display: flex;
+  gap: 10px;  /* Espacio entre las imágenes */
+  width: fit-content;
+  animation: scrollImages 25s infinite linear; /* Animación de desplazamiento continuo */
 }
 
-.carousel-media-mobile:hover {
-  transform: scale(1.05) rotate(0deg);
-  cursor: pointer;
+/* Desplazamiento de las imágenes */
+@keyframes scrollImages {
+  0% {
+    transform: translateX(0); /* Empieza en la posición inicial */
+  }
+  100% {
+    transform: translateX(-500%); /* Se mueve a la izquierda hasta fuera de vista */
+  }
+}
+
+/* Cada item del carrusel */
+.carousel-item-mobile {
+  flex: 0 0 auto;
+  width: 90%;  /* Ajustamos el tamaño para móviles */
+  max-width: 300px;  /* Máximo tamaño */
+}
+
+/* Estilo de las imágenes dentro del carrusel */
+.carousel-media-mobile {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }

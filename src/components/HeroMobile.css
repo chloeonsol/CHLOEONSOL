@@ -22,7 +22,7 @@
     display: flex;
     justify-content: center;
     position: absolute;
-    bottom: 0; /* Centrado en la parte inferior */
+    bottom: -5%; /* Centrado en la parte inferior */
     animation: floatAnimation 3s ease-in-out infinite; /* Animación de flotación */
   }
   
@@ -34,13 +34,13 @@
   /* Animación para el efecto flotante de la imagen */
   @keyframes floatAnimation {
     0% {
-      transform: translateY(30px); /* Posición inicial */
+      transform: translateY(20px); /* Posición inicial */
     }
     50% {
-      transform: translateY(5px); /* Mueve hacia arriba */
+      transform: translateY(0px); /* Mueve hacia arriba */
     }
     100% {
-      transform: translateY(30px); /* Vuelve a la posición original */
+      transform: translateY(20px); /* Vuelve a la posición original */
     }
   }
   /* Imagen del título ajustada */
