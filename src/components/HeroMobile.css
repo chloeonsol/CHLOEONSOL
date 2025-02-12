@@ -22,7 +22,7 @@
     display: flex;
     justify-content: center;
     position: absolute;
-    bottom: -5%; /* Centrado en la parte inferior */
+    bottom: -15%; /* Centrado en la parte inferior */
     animation: floatAnimation 3s ease-in-out infinite; /* Animación de flotación */
   }
   
