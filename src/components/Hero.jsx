@@ -59,7 +59,7 @@ const Hero = () => {
           </a>
 
           {/* Segundo botón: X */}
-          <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
+          <a href="https://x.com/buychloecto" target="_blank" rel="noopener noreferrer">
             <button className={isMobile ? "social-button-mobile" : "social-button"} style={{ backgroundImage: 'url(/X.jpg)' }}></button>
           </a>
 

@@ -26,7 +26,7 @@ const Footer = () => {
         <a href="https://t.me/chloeofficalportal" target="_blank" rel="noopener noreferrer" className="footer-link">
           Telegram
         </a>
-        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" className="footer-link">
+        <a href="https://x.com/buychloecto" target="_blank" rel="noopener noreferrer" className="footer-link">
           X (Twitter)
         </a>
         <a href="https://jup.ag/swap/SOL-7DdHyxLZQuudndfrX3ZDDqgK6zPFbm17wGwKJqgjpump" target="_blank" rel="noopener noreferrer" className="footer-link">
