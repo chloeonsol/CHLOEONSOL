@@ -1,216 +1,387 @@
-/* Contenedor principal en versión móvil */
+@font-face {
+  font-family: 'Bubble';
+  src: url('../fonts/bubble.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .hero-container-mobile-version {
-    background-image: url('/bgmobile.png'); /* Fondo actualizado */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    color: white;
-    text-align: center;
-    padding: 60px 20px 20px; /* Añadido más padding arriba para separar del navbar */
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden; /* Evitar scroll horizontal */
+  background-image: url('/backview.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Se baja un poco el contenido */
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 20px 10px; /* Se ajusta el padding superior */
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container-mobile-version::before {
+  content: "";
+  background-image: url('/logoback.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: auto;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+@font-face {
+  font-family: 'Bubble';
+  src: url('../fonts/bubble.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.hero-container-mobile-version {
+  background-image: url('/backview.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Se baja un poco el contenido */
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 20px 10px; /* Se ajusta el padding superior */
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container-mobile-version::before {
+  content: "";
+  background-image: url('/logoback.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: auto;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 19vh;
+}
+
+/* Ajuste del logo/título */
+.hero-title-mobile-version {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  text-align: center;
+  margin-top: -10px;
+  animation: floatAnimation 3s ease-in-out infinite;
+  text-align: center;
+}
+
+@keyframes floatAnimation {
+  0% {
+      transform: translateY(30px);
   }
-/* Estilo para la imagen logobg.png centrada en la parte inferior */
+  50% {
+      transform: translateY(5px);
+  }
+  100% {
+      transform: translateY(30px);
+  }
+}
+
+
+/* Texto debajo del título */
+.hero-title-mobile-version {
+  font-size: 6vw;
+  max-width: 90%;
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+/* Contenedor de botones */
+.address-button-container-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  width: 100%;
+  max-width: 350px; /* Se amplía la caja de los botones */
+}
+
+/* Botones ajustados */
+.address-button-mobile, .copy-button-mobile {
+  background: linear-gradient(145deg, #CB72F0, #F172D5);
+  color: white;
+  font-family: 'Bubble', cursive, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid #280000;
+  border-radius: 20px;
+  padding: 12px 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  max-width: 300px; /* Se amplía el ancho de los botones */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* Botón de copiar */
+.copy-button-mobile {
+  background: black;
+  color: white;
+}
+
+.copy-button-mobile:hover {
+  background-color: #6a4c9c;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Botones sociales */
+.social-buttons-container-mobile {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 15px;
+  width: 100%;
+  max-width: 320px;
+}
+
+/* Tamaño ampliado para los botones sociales */
+.social-button-mobile {
+  width: 45px;
+  height: 45px;
+  font-size: 18px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #280000;
+}
+
+/* Efecto hover */
+.social-button-mobile:hover {
+  background-color: #6a4c9c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Estilos para white-text y purple-text */
+.white-text {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.purple-text {
+  color: #EF72D7;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Animación flotante para la imagen */
+@keyframes floatAnimation {
+  0% {
+      transform: translateY(15px);
+  }
+  50% {
+      transform: translateY(0px);
+  }
+  100% {
+      transform: translateY(15px);
+  }
+}
+
+/* Contenedor de imagen de fondo */
 .logobg-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: -15%; /* Centrado en la parte inferior */
-    animation: floatAnimation 3s ease-in-out infinite; /* Animación de flotación */
-  }
-  
-  .logobg-image {
-    max-width: 70%; /* Ajusta el tamaño según sea necesario */
-    height: auto;
-  }
-  
-  /* Animación para el efecto flotante de la imagen */
-  @keyframes floatAnimation {
-    0% {
-      transform: translateY(20px); /* Posición inicial */
-    }
-    50% {
-      transform: translateY(0px); /* Mueve hacia arriba */
-    }
-    100% {
-      transform: translateY(20px); /* Vuelve a la posición original */
-    }
-  }
-  /* Imagen del título ajustada */
-  .hero-title-mobile-version {
-    width: 100%;
-    max-width: 500px;
-    font-size: 55px;
-    text-transform: uppercase;
-    display: inline-block;
-    margin-top: 15vh; /* Ajusta el margen superior para evitar que se solape con el navbar */
-    margin-left: -60px; /* Asegura que no haya desplazamiento hacia la derecha */
-    margin-right: auto; /* Centra el título horizontalmente */
-    text-align: center; /* Alinea el texto al centro dentro del contenedor */
-    position: relative;
-  }
-  
-  
-  
-  /* Estilo del texto en versión móvil */
-  .hero-text-mobile-version {
-    font-size: 24px;
-    margin-left: -60px; /* Asegura que no haya desplazamiento hacia la derecha */
-    font-family: 'Bubble', cursive, sans-serif;
-    letter-spacing: 2px;
-    font-weight: bold;
-    color: #6a4c9c;
-    text-shadow: 
-      2px 2px 4px rgba(0, 0, 0, 0.7),
-      0 0 10px rgba(32, 43, 47, 1);
-    padding: 5px;
-    border-radius: 10px;
-    margin-top: 15px;
-    margin-bottom: 25px; /* Reducido para evitar demasiado espacio */
-  }
-  
-  /* Hero Button - Dirección y Copiar */
-  .address-button-container-mobile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 15px; /* Ajustado para más separación */
-    width: 100%;
-    padding: 0 20px;
-    margin-left: -60px; /* Asegura que no haya desplazamiento hacia la derecha */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: -80%;
+  left: -5%;
+}
 
-  }
-  
-  .address-button-mobile {
-    background: linear-gradient(145deg, #CB72F0, #F172D5);
-    color: white;
-    font-family: 'Bubble', cursive, sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    border: 3px solid #280000;
-    border-radius: 30px;
-    padding: 12px 25px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    position: relative;
-    box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  /* Dirección del botón */
-  .address-text-mobile {
-    margin-right: 10px;
-    font-weight: bold;
-    color: black;
-  }
-  
-  /* Botón de Copiar */
+.logobg-image {
+  max-width: 60%;
+  height: auto;
+}
 
-  
-  .copy-button-mobile:hover {
-    background-color: #6a4c9c;
-    color: white;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-  }
-  
-  .check-icon-mobile {
-    color: green;
-    margin-left: 10px;
-    opacity: 0;
-    transform: scale(0);
-    transition: all 0.3s ease;
-  }
-  
-  .copy-button-mobile.copied .check-icon-mobile {
-    opacity: 1;
-    transform: scale(1);
-    animation: checkAnimationMobile 0.3s ease-out forwards;
-  }
-  
-  .copy-button-mobile:focus {
-    outline: none;
-  }
-  
-  @keyframes checkAnimationMobile {
-    0% {
-      transform: scale(0);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-  
-  /* Contenedor para los 5 botones sociales */
-  .social-buttons-container-mobile {
-    margin-left: -40px; /* Asegura que no haya desplazamiento hacia la derecha */
+/* Ajuste del logo/título */
+.hero-title-mobile-version {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  text-align: center;
+  margin-top: -10px;
+  animation: floatAnimation 3s ease-in-out infinite;
+  text-align: center;
+}
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-top: 15px; /* Ajustado el espacio entre botones */
-    gap: 20px;
-    width: 100%;
+@keyframes floatAnimation {
+  0% {
+      transform: translateY(30px);
   }
-  
-  /* Estilo de los botones sociales */
-  .social-button-mobile {
-    background-color: #3a3a3a;
-    border: 3px solid #280000;
-    border-radius: 50px;
-    padding: 10px; /* Reducidos los botones */
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px; /* Botones pequeños */
-    height: 50px;
-    font-size: 20px; /* Reducción de iconos */
-    background-size: cover;
-    background-position: center;
+  50% {
+      transform: translateY(5px);
   }
-  
-  .social-button-mobile:hover {
-    background-color: #6a4c9c;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  100% {
+      transform: translateY(30px);
   }
-  
-  .social-button-mobile:focus {
-    outline: none;
+}
+
+
+/* Texto debajo del título */
+.hero-title-mobile-version {
+  font-size: 6vw;
+  max-width: 90%;
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+/* Contenedor de botones */
+.address-button-container-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  width: 100%;
+  max-width: 350px; /* Se amplía la caja de los botones */
+}
+
+/* Botones ajustados */
+.address-button-mobile, .copy-button-mobile {
+  background: linear-gradient(145deg, #CB72F0, #F172D5);
+  color: white;
+  font-family: 'Bubble', cursive, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid #280000;
+  border-radius: 20px;
+  padding: 12px 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  max-width: 300px; /* Se amplía el ancho de los botones */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* Botón de copiar */
+.copy-button-mobile {
+  background: black;
+  color: white;
+}
+
+.copy-button-mobile:hover {
+  background-color: #6a4c9c;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Botones sociales */
+.social-buttons-container-mobile {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 15px;
+  width: 100%;
+  max-width: 320px;
+}
+
+/* Tamaño ampliado para los botones sociales */
+.social-button-mobile {
+  width: 45px;
+  height: 45px;
+  font-size: 18px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #280000;
+}
+
+/* Efecto hover */
+.social-button-mobile:hover {
+  background-color: #6a4c9c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Estilos para white-text y purple-text */
+.white-text {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.purple-text {
+  color: #EF72D7;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Animación flotante para la imagen */
+@keyframes floatAnimation {
+  0% {
+      transform: translateY(15px);
   }
-  
-  .social-button-mobile:nth-child(1) {
-    background-image: url('/tg.avif');
+  50% {
+      transform: translateY(0px);
   }
-  
-  .social-button-mobile:nth-child(2) {
-    background-image: url('/X.jpg');
+  100% {
+      transform: translateY(15px);
   }
-  
-  .social-button-mobile:nth-child(3) {
-    background-image: url('/jup.webp');
-  }
-  
-  .social-button-mobile:nth-child(4) {
-    background-image: url('/dexs.png');
-  }
-  
-  .social-button-mobile:nth-child(5) {
-    background-image: url('/dexs.avif');
-  }
-  
+}
+
+/* Contenedor de imagen de fondo */
+.logobg-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: -80%;
+  left: -5%;
+}
+
+.logobg-image {
+  max-width: 60%;
+  height: auto;
+}
