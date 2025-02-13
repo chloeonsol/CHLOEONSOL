@@ -377,8 +377,8 @@
   display: flex;
   justify-content: center;
   position: absolute;
-  bottom: -80%;
-  left: -5%;
+  bottom: -120%;
+
 }
 
 .logobg-image {
