@@ -5,7 +5,6 @@
 @tailwind utilities;
 
 
-
 /* Cambiar el display del body para que no afecte a los componentes */
 body {
   font-family: 'Poppins', sans-serif;
