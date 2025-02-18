@@ -48,18 +48,21 @@ const BuySection = () => {
         console.error("Error inicializando el widget de Jupiter:", error);
       }
     };
-
-    if (window.Jupiter) {
-      initializeWidget();
-    } else {
-      console.error("El script de Jupiter no está disponible.");
-    }
-
+  
+    const checkJupiterAvailability = setInterval(() => {
+      if (window.Jupiter) {
+        clearInterval(checkJupiterAvailability);
+        initializeWidget();
+      }
+    }, 500); // Revisa cada 500ms hasta que esté disponible
+  
     return () => {
+      clearInterval(checkJupiterAvailability);
       const container = document.getElementById("jupiter-terminal");
       if (container) container.innerHTML = ""; // Limpia el contenedor
     };
   }, []);
+  
 
   const platforms = [
     {

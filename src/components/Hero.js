@@ -54,7 +54,7 @@ const Hero = () => {
         </div>
         <div className={isMobile ? "social-buttons-container-mobile" : "social-buttons-container"}>
           {/* Primer botón: Telegram */}
-          <a href="https://t.me/chloeofficalportal" target="_blank" rel="noopener noreferrer">
+          <a href="https://t.me/Chloe_CTO_Portal" target="_blank" rel="noopener noreferrer">
             <button className={isMobile ? "social-button-mobile" : "social-button"} style={{ backgroundImage: 'url(/tg.avif)' }}></button>
           </a>
 
