@@ -1,0 +1,32 @@
+.tokenomics {
+    background-color: #FFF2E6;
+    color: #8E44AD;
+    text-align: center;
+    padding: 60px 16px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tokenomics h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+  }
+  
+  .tokenomics p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #5D2A9F;
+  }
+  
+  /* Ajustes para pantallas más pequeñas */
+  @media screen and (max-width: 768px) {
+    .tokenomics h2 {
+      font-size: 2rem;
+    }
+  
+    .tokenomics p {
+      font-size: 1rem;
+    }
+  }
+  

@@ -1,0 +1,387 @@
+@font-face {
+  font-family: 'Bubble';
+  src: url('../assets/fonts/bubble.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.hero-container-mobile-version {
+  background-image: url('../assets/backview.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Se baja un poco el contenido */
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 20px 10px; /* Se ajusta el padding superior */
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container-mobile-version::before {
+  content: "";
+  background-image: url('../assets/logoback.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: auto;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+@font-face {
+  font-family: 'Bubble';
+  src: url('../assets/fonts/bubble.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.hero-container-mobile-version {
+  background-image: url('../assets/backview.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Se baja un poco el contenido */
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 20px 10px; /* Se ajusta el padding superior */
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container-mobile-version::before {
+  content: "";
+  background-image: url('../assets/logoback.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: auto;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 19vh;
+}
+
+/* Ajuste del logo/título */
+.hero-title-mobile-version {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  text-align: center;
+  margin-top: -10px;
+  animation: floatAnimation 3s ease-in-out infinite;
+  text-align: center;
+}
+
+@keyframes floatAnimation {
+  0% {
+      transform: translateY(30px);
+  }
+  50% {
+      transform: translateY(5px);
+  }
+  100% {
+      transform: translateY(30px);
+  }
+}
+
+
+/* Texto debajo del título */
+.hero-title-mobile-version {
+  font-size: 6vw;
+  max-width: 90%;
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+/* Contenedor de botones */
+.address-button-container-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  width: 100%;
+  max-width: 350px; /* Se amplía la caja de los botones */
+}
+
+/* Botones ajustados */
+.address-button-mobile, .copy-button-mobile {
+  background: linear-gradient(145deg, #CB72F0, #F172D5);
+  color: white;
+  font-family: 'Bubble', cursive, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid #280000;
+  border-radius: 20px;
+  padding: 12px 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  max-width: 300px; /* Se amplía el ancho de los botones */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* Botón de copiar */
+.copy-button-mobile {
+  background: black;
+  color: white;
+}
+
+.copy-button-mobile:hover {
+  background-color: #6a4c9c;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Botones sociales */
+.social-buttons-container-mobile {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 15px;
+  width: 100%;
+  max-width: 320px;
+}
+
+/* Tamaño ampliado para los botones sociales */
+.social-button-mobile {
+  width: 45px;
+  height: 45px;
+  font-size: 18px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #280000;
+}
+
+/* Efecto hover */
+.social-button-mobile:hover {
+  background-color: #6a4c9c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Estilos para white-text y purple-text */
+.white-text {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.purple-text {
+  color: #EF72D7;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Animación flotante para la imagen */
+@keyframes floatAnimation {
+  0% {
+      transform: translateY(15px);
+  }
+  50% {
+      transform: translateY(0px);
+  }
+  100% {
+      transform: translateY(15px);
+  }
+}
+
+/* Contenedor de imagen de fondo */
+.logobg-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: -80%;
+  left: -5%;
+}
+
+.logobg-image {
+  max-width: 60%;
+  height: auto;
+}
+
+/* Ajuste del logo/título */
+.hero-title-mobile-version {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  text-align: center;
+  margin-top: -10px;
+  animation: floatAnimation 3s ease-in-out infinite;
+  text-align: center;
+}
+
+@keyframes floatAnimation {
+  0% {
+      transform: translateY(30px);
+  }
+  50% {
+      transform: translateY(5px);
+  }
+  100% {
+      transform: translateY(30px);
+  }
+}
+
+
+/* Texto debajo del título */
+.hero-title-mobile-version {
+  font-size: 6vw;
+  max-width: 90%;
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+/* Contenedor de botones */
+.address-button-container-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  width: 100%;
+  max-width: 350px; /* Se amplía la caja de los botones */
+}
+
+/* Botones ajustados */
+.address-button-mobile, .copy-button-mobile {
+  background: linear-gradient(145deg, #CB72F0, #F172D5);
+  color: white;
+  font-family: 'Bubble', cursive, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid #280000;
+  border-radius: 20px;
+  padding: 12px 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  max-width: 300px; /* Se amplía el ancho de los botones */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* Botón de copiar */
+.copy-button-mobile {
+  background: black;
+  color: white;
+}
+
+.copy-button-mobile:hover {
+  background-color: #6a4c9c;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Botones sociales */
+.social-buttons-container-mobile {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 15px;
+  width: 100%;
+  max-width: 320px;
+}
+
+/* Tamaño ampliado para los botones sociales */
+.social-button-mobile {
+  width: 45px;
+  height: 45px;
+  font-size: 18px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #280000;
+}
+
+/* Efecto hover */
+.social-button-mobile:hover {
+  background-color: #6a4c9c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Estilos para white-text y purple-text */
+.white-text {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.purple-text {
+  color: #EF72D7;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Animación flotante para la imagen */
+@keyframes floatAnimation {
+  0% {
+      transform: translateY(15px);
+  }
+  50% {
+      transform: translateY(0px);
+  }
+  100% {
+      transform: translateY(15px);
+  }
+}
+
+/* Contenedor de imagen de fondo */
+.logobg-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: -120%;
+
+}
+
+.logobg-image {
+  max-width: 60%;
+  height: auto;
+}

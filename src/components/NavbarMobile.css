@@ -1,0 +1,173 @@
+/* Navbar para versión móvil */
+.mobile-navbar {
+  position: absolute; /* Fija el navbar al top de la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  z-index: 1000;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+/* Logo móvil */
+.navbar-logo-mobile {
+  width: 230px;
+  height: auto;
+  object-fit: contain;
+  margin-top: 10px;
+  position: absolute; /* Logo fijo en la parte superior */
+  top: 50%; /* Centrado verticalmente */
+  left: 15px;
+  transform: translateY(-50%); /* Alineado verticalmente al centro */
+}
+
+/* Estilo para la hamburguesa como un botón redondo */
+.hamburger-icon-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; /* Centra el icono */
+  width: 45px; /* Tamaño ajustado */
+  height: 45px; /* Tamaño ajustado */
+  cursor: pointer;
+  border-radius: 50%; /* Hacemos que sea redonda */
+  background-color: #9c4dcc; /* Fondo morado claro */
+  padding: 7px; /* Ajustamos el padding */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  transition: all 0.3s ease;
+  border: 5px solid #7c38b7; /* Borde más oscuro */
+  position: absolute;
+  right: 15px; /* Alineado a la derecha */
+  top: 80%; /* Alineado verticalmente */
+  transform: translateY(-50%); /* Alineado perfectamente al centro */
+}
+
+/* Efecto hover en la hamburguesa */
+.hamburger-icon-mobile:hover {
+  background-color: #ab47bc; /* Fondo morado más brillante */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
+}
+
+/* Líneas de la hamburguesa */
+.hamburger-line-mobile {
+  width: 100%;
+  height: 6px;
+  background-color: white; /* Aseguramos que las líneas sean blancas */
+  border-radius: 5px;
+}
+
+/* Cuando el menú está abierto, el icono hamburguesa tendrá un brillo alrededor */
+.hamburger-icon-mobile.open {
+  background-color: #ab47bc; /* Fondo morado cuando el menú está abierto */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6); /* Brillo alrededor */
+}
+
+/* Cambio de color de las líneas al abrir el menú */
+.hamburger-icon-mobile.open .hamburger-line-mobile {
+  background-color: #6a1b9a; /* Cambio de color a morado oscuro */
+}
+
+/* Menú desplegable */
+.navbar-menu-mobile {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: 40vh; /* Ajustamos la altura del menú */
+  background-color: #202B2F;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+  gap: 5px; /* Reducimos el espacio entre botones */
+  z-index: 999;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.navbar-menu-mobile.open {
+  transform: translateY(0); /* El menú se despliega */
+}
+
+/* Botones dentro del menú */
+.navbar-button-mobile {
+  background: linear-gradient(145deg, #6a4c9c, #5b3c8d);
+  color: white;
+  font-family: 'Bubble', cursive, sans-serif;
+  font-size: 22px; /* Tamaño ajustado */
+  font-weight: bold;
+  border: 3px solid #280000;
+  border-radius: 30px;
+  padding: 12px 0; /* Ajustamos el padding */
+  width: 85%; /* Botones más estrechos */
+  text-align: left;
+  padding-left: 20px;
+  margin: 0; /* Eliminamos los márgenes negativos */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto hover en los botones */
+.navbar-button-mobile:hover {
+  background: linear-gradient(145deg, #5b3c8d, #6a4c9c);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(106, 76, 156, 0.7), inset 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-button-mobile:focus {
+  outline: none;
+}
+
+.navbar-button-mobile::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(40, 0, 0, 0.4);
+  border-radius: 30px;
+  z-index: -1;
+}
+
+/* Fondo translúcido cuando el menú está abierto */
+.overlay-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 998;
+}
+/* Estilo para el botón Buy en la versión móvil, en la parte superior derecha */
+.navbar-button-mobile-top-right {
+  position: absolute;
+  top: 10px; /* Ajusta la distancia desde la parte superior */
+  right: 15px; /* Ajusta la distancia desde el borde derecho */
+  background-color: #9c4dcc; /* Color de fondo morado */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.navbar-button-mobile-top-right:hover {
+  background-color: #ab47bc; /* Fondo morado más brillante al pasar el ratón */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+}

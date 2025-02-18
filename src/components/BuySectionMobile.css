@@ -1,0 +1,172 @@
+/* Importar la fuente Bubble */
+@font-face {
+    font-family: 'Bubble';
+    src: url('../assets/fonts/bubble.ttf') format('truetype');
+  }
+  
+  /* Mobile Styles */
+  .buy-section-mobile {
+    background: radial-gradient(circle, #3e2352 10%, #25142a 50%, #150b1a 90%);
+    color: #d4f1f9;
+    min-height: 120vh;
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Bubble', sans-serif;
+    position: relative;
+    overflow-y: auto;
+  }
+  
+  
+  /* Contenido Principal */
+  .buy-section-content-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    gap: 60px;
+    width: 100%;
+  }
+  
+  /* Texto */
+  .buy-text-mobile {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .buy-title-mobile {
+    font-family: 'Bubble', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff85a2; /* Rosa pastel */
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #ff85a2, #ffcad4, #ff85a2);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: text-glow-smooth-mobile 6s infinite linear;
+  }
+  
+  @keyframes text-glow-smooth-mobile {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .buy-description-mobile {
+    font-size: 1.1rem;
+    color: #7d5ba6; /* Morado pastel */
+    line-height: 1.6;
+  }
+  
+  /* Widget */
+  .widget-container-mobile {
+    width: 100%;
+    max-width: 95%;
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .jupiter-terminal-mobile {
+    width: 100%;
+    height: 580px;
+    border: 3px solid #BFEEF3;
+    border-radius: 10px;
+    background-color: #121212;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    z-index: 2;
+  }
+  
+  /* Plataformas */
+  .platforms-container-mobile {
+    width: 100%;
+    max-width: 95%;
+    background: rgba(201, 200, 255, 0.8);
+    border: 2px solid #ff85a2;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(255, 160, 180, 0.4);
+    margin-top: 0px;
+  }
+  
+  .platforms-title-mobile {
+    font-size: 1.3rem;
+    color: #6a0572;
+    font-family: 'Bubble', sans-serif;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .platforms-buttons-mobile {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .platform-button-mobile {
+    background: #ffcad4;
+    color: #6a0572;
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Bubble', sans-serif;
+    border: 1px solid #ff85a2;
+    box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+    transition: all 0.3s ease;
+  }
+  
+  .platform-button-mobile:hover {
+    background: #ff85a2;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255, 133, 162, 0.6);
+  }
+  
+  /* Imagen del Personaje */
+  .character-image-mobile {
+    position: absolute;
+    top: -28vw;
+    right: 35vh;
+    transform: translateX(50%);
+    width: 150px;
+    z-index: 3;
+    pointer-events: none;
+  }
+  
+  /* Media Query para dispositivos más pequeños */
+  @media screen and (max-width: 375px) {
+    .buy-title-mobile {
+      font-size: 2rem;
+    }
+  
+    .buy-description-mobile {
+      font-size: 1rem;
+    }
+  
+    .jupiter-terminal-mobile {
+      height: 550px;
+    }
+  
+    .platform-button-mobile {
+      font-size: 0.85rem;
+      padding: 6px 10px;
+    }
+  
+    .character-image-mobile {
+      top: -95px;
+      width: 100px;
+      right: 320px;
+    }
+  }
+  

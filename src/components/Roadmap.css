@@ -1,0 +1,129 @@
+body {
+  background-color: #0d0d19; /* Mantiene un fondo oscuro en toda la página */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.roadmap-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%; /* Aumentado para una mejor visualización */
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  background-color: #161225; /* Fondo oscuro para el roadmap */
+  padding: 80px 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 50px rgba(255, 105, 180, 0.3);
+}
+
+/* Barra de progreso con brillo rosa */
+.progress-bar {
+  position: absolute;
+  left: 50%;
+  width: 6px;
+  background-color: #ff69b4;
+  transition: height 0.3s ease-in-out;
+  box-shadow: 0px 0px 20px rgba(255, 105, 180, 0.8);
+}
+
+/* Trayectoria del roadmap */
+.roadmap-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px; /* Más espacio entre los elementos */
+  margin-top: 40px;
+}
+
+
+/* Cada paso de la hoja de ruta */
+.roadmap-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.5;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+/* Cuando el paso se desbloquea */
+.roadmap-step.unlocked {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+/* Nodo con brillo y colores vibrantes */
+.roadmap-node {
+  width: 55px;
+  height: 55px;
+  background: #ff69b4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 0 25px rgba(255, 105, 180, 1);
+}
+
+/* Efecto brillante en nodos desbloqueados */
+.roadmap-step.unlocked .roadmap-node {
+  box-shadow: 0 0 50px rgba(255, 105, 180, 1);
+  transform: scale(1.3);
+}
+/* Línea de conexión animada entre los pasos */
+.roadmap-connector {
+  width: 6px;
+  background: linear-gradient(to bottom, #ff69b4, rgba(255, 255, 255, 0.1));
+  transition: height 0.6s ease-out;
+  box-shadow: 0px 0px 15px rgba(255, 105, 180, 0.8);
+}
+
+
+/* Caja de contenido con efecto radioactivo */
+.roadmap-content {
+  padding: 25px;
+  background: rgba(20, 20, 30, 0.9);
+  border-radius: 12px;
+  border: 2px solid rgba(255, 105, 180, 0.5);
+  width: 85%;
+  max-width: 500px;
+  transition: all 0.6s ease-in-out;
+  position: relative;
+}
+
+/* Caja radiactiva al desbloquearse */
+.roadmap-step.unlocked .roadmap-content {
+  background: rgba(255, 20, 147, 0.2);
+  border-color: #ff1493;
+  box-shadow: 0px 0px 60px rgba(255, 20, 147, 0.8);
+  transform: scale(1.1);
+}
+
+/* Efecto de pulso radiactivo en las cajas desbloqueadas */
+.roadmap-step.unlocked .roadmap-content::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 15px;
+  background: rgba(255, 20, 147, 0.1);
+  box-shadow: 0px 0px 40px rgba(255, 20, 147, 0.5);
+  animation: pulse 1.5s infinite alternate;
+}
+
+/* Animación de pulso */
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}

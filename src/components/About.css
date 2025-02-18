@@ -1,0 +1,203 @@
+/* Fondo oscuro con formas abstractas para la sección */
+.about-container {
+  background: linear-gradient(135deg, #202B2F, #131a1d); /* Fondo oscuro */
+  background-size: 300% 300%; /* Animamos el fondo */
+  padding: 50px 0; /* Espaciado en la parte superior e inferior */
+  position: relative;
+  animation: abstractBackground 10s ease-in-out infinite; /* Animación del fondo */
+  z-index: 0; /* Asegura que el contenido no quede por debajo de otros elementos */
+}
+
+/* Animación para el fondo abstracto */
+@keyframes abstractBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* Formas abstractas sutiles */
+.about-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+   /* Aquí pondremos una forma abstracta */
+  background-size: cover;
+  opacity: 0.1; /* Sutileza en el fondo */
+  z-index: 1;
+}
+
+/* Título de la sección About */
+.about-title {
+  font-size: 60px;
+  font-family: 'Bubble', cursive, sans-serif;
+  color: #EF72D7; /* Morado brillante */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Sombra sutil */
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Contenedor para la descripción del meme */
+.about-text-container {
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad */
+  border: 5px solid #EF72D7; /* Borde grueso morado */
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 1200px;
+}
+
+/* Descripción del texto */
+.about-text {
+  font-size: 22px;
+  font-family: 'Bubble', cursive, sans-serif;
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+
+/* Estilización del enlace como botón */
+.about-button {
+  background: linear-gradient(145deg, #6a4c9c, #5b3c8d);
+  color: white;
+  font-family: 'Bubble', cursive, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  border: 3px solid #280000;
+  border-radius: 30px;
+  padding: 12px 20px;
+  margin-top: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  transition: all 0.3s ease;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto; /* Centra el enlace */
+  text-decoration: none;
+  position: relative; /* Asegura que se posicione correctamente en el flujo */
+  z-index: 10; /* Asegura que esté encima de otros elementos */
+}
+.about-button:hover {
+  background-color: #6a4c9c;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.about-button a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Carousel de memes */
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+}
+.carousel {
+  display: flex;
+  white-space: nowrap;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  z-index: 1;
+  }
+
+
+/* Permitir el desplazamiento manual sin interferencias */
+.carousel::-webkit-scrollbar {
+display: none;
+}
+.carousel-item {
+flex: 0 0 auto;
+padding: 10px;
+}
+/* Ajustes para que las imágenes se muevan en bucle sin corte */
+.carousel-item {
+flex: 0 0 auto;
+padding: 10px;
+transition: transform 0.2s ease-in-out;
+}
+/* Estilo de las imágenes y videos */
+.carousel-media {
+  width: 100%;
+  max-width: 600px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease-in-out;
+}
+.carousel-media:hover {
+transform: scale(1.05);
+cursor: pointer;
+}
+
+/* Efecto de inclinación de las imágenes */
+.carousel-media:nth-child(odd) {
+  transform: rotate(-5deg); /* Rotación a la izquierda para imágenes impares */
+}
+
+.carousel-media:nth-child(even) {
+  transform: rotate(5deg); /* Rotación a la derecha para imágenes pares */
+}
+
+/* Efecto de hover en las imágenes del carousel */
+.carousel-media:hover {
+  transform: scale(1.05) rotate(0deg); /* Hace que la imagen se alinee al pasar el ratón */
+  cursor: pointer;
+}
+
+/* Animación para el desplazamiento fluido del carousel */
+@keyframes scrollCarousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-360%); /* Hace que el carousel se desplace completamente */
+  }
+}
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.modal-content {
+max-width: 90%;
+max-height: 90%;
+}
+
+.modal-image {
+width: 100%;
+height: auto;
+max-height: 90vh;
+border-radius: 10px;
+
+}

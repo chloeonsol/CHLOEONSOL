@@ -1,0 +1,49 @@
+/* Footer básico */
+.footer {
+  background-color: #202B2F; /* Fondo oscuro */
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-logo-container {
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  max-width: 150px;
+  height: auto;
+}
+
+.footer-links {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-link {
+  color: #EF72D7; /* Morado brillante para los enlaces */
+  font-family: 'Bubble', cursive, sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #6a4c9c; /* Cambio de color al pasar el ratón */
+  text-decoration: underline;
+}
+
+.footer-copy {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.footer-copy p {
+  margin: 0;
+}

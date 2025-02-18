@@ -1,0 +1,60 @@
+/* Footer para la versión móvil */
+.footer-mobile {
+  background-color: #202B2F;
+  padding: 1rem;
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box; /* Asegura que padding y border se incluyan en el tamaño total */
+  overflow-x: hidden; /* Evitar scroll horizontal */
+}
+
+.footer-logo-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-logo {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+}
+
+.footer-links-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 0 15px; /* Ajustamos el padding para evitar desbordes */
+}
+
+.footer-link {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-link:hover {
+  color: #00d4ff;
+}
+
+.footer-copy {
+  font-size: 14px;
+  color: #aaa;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Evitar desplazamiento horizontal global */
+body {
+  overflow-x: hidden; /* Evitar scroll horizontal */
+}

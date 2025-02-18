@@ -1,0 +1,185 @@
+/* Fondo oscuro con formas abstractas para la sección (versión móvil) */
+.about-mobile-container {
+  background: linear-gradient(135deg, #202B2F, #131a1d); /* Fondo oscuro */
+  background-size: 300% 300%; /* Animamos el fondo */
+  padding: 30px 10px; /* Ajustamos el padding para móviles */
+  position: relative;
+  animation: abstractBackground 10s ease-in-out infinite; /* Animación del fondo */
+  z-index: 2; /* Asegura que el contenido no quede por debajo de otros elementos */
+  overflow-x: hidden; /* Evitar desplazamiento horizontal */
+}
+
+/* Animación para el fondo abstracto */
+@keyframes abstractBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* Formas abstractas sutiles */
+.about-mobile-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  opacity: 0.1; /* Sutileza en el fondo */
+  z-index: 1;
+}
+
+/* Título de la sección About */
+.about-title-mobile {
+  font-size: 5vh; /* Ajustamos el tamaño en móviles */
+  font-family: 'Bubble', cursive, sans-serif;
+  color: #EF72D7; /* Morado brillante */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Sombra sutil */
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+/* Contenedor para la descripción del meme */
+.about-text-container-mobile {
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad */
+  border: 3px solid #EF72D7; /* Borde más delgado en móviles */
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px auto;
+  width: 90%; /* Ajustamos el ancho */
+  max-width: 1000px; /* Evitamos desbordes */
+}
+
+/* Descripción del texto */
+.about-text-mobile {
+  font-size: 16px; /* Ajustamos el tamaño de la fuente */
+  font-family: 'Bubble', cursive, sans-serif;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+/* Estilización del botón */
+.about-button-mobile {
+  background: linear-gradient(145deg, #6a4c9c, #5b3c8d);
+  color: white;
+  font-family: 'Bubble', cursive, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  border: 3px solid #280000;
+  border-radius: 30px;
+  padding: 12px 20px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  transition: all 0.3s ease;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+  position: relative;
+  z-index: 10;
+}
+
+.about-button-mobile:hover {
+  background-color: #6a4c9c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Carrusel contenedor (versión móvil) */
+.carousel-container-mobile {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Carrusel con desplazamiento manual */
+.carousel-mobile {
+  display: flex;
+  gap: 10px;
+  width: max-content;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x; /* Permite solo desplazamiento horizontal */
+  z-index: 10000;
+}
+
+/* Ocultar scroll en dispositivos móviles */
+.carousel-mobile::-webkit-scrollbar {
+  display: none;
+}
+
+/* Cada item del carrusel */
+.carousel-item-mobile {
+  flex: 0 0 auto;
+  width: 80%;
+  max-width: 280px; /* Ajuste para evitar imágenes demasiado grandes */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Ajustes en la animación de desplazamiento */
+@keyframes scrollImages {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Estilo de las imágenes dentro del carrusel */
+.carousel-media-mobile {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Efecto de hover en imágenes */
+.carousel-media-mobile:hover {
+  transform: scale(1.05);
+}
+
+/* Modal de imágenes en móvil */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000000000;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  border-radius: 10px;
+}

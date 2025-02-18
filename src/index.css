@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* Cambiar el display del body para que no afecte a los componentes */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff; /* Blanco de fondo */
+  color: #7D3C98; /* Morado para el texto */
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden; /* Evitar desplazamiento horizontal no deseado */
+}
+
+/* Resetear flex en el body */
+body > * {
+  display: block; /* Asegurar que los componentes no estén en un contenedor flex */
+}
+/* Ocultar barra de scroll en toda la web */
+html, body {
+  overflow-x: hidden; /* Oculta el desplazamiento horizontal */
+  scrollbar-width: none; /* Oculta la barra de scroll en Firefox */
+  -ms-overflow-style: none; /* Oculta la barra en Internet Explorer y Edge */
+}
+
+/* Ocultar scroll en navegadores basados en Webkit (Chrome, Safari, Opera) */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
