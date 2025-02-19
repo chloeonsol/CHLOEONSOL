@@ -6,15 +6,11 @@ import "./MusicPlayer.css";
 // Lista de canciones
 const songs = [
     {
-        title: "IVOXYGEN - Write My Name In Your Heart",
-        artist: "IVOXYGEN",
-        src: process.env.PUBLIC_URL + "/music/IVOXYGEN - Write My Name In Your Heart.mp3"
+        title: "Side Eye song",
+        artist: "CHLOE",
+        src: process.env.PUBLIC_URL + "/music/$CHLOE Side Eye Song.mp3"
       },
-    {
-      title: "Ringaring",
-      artist: "Unknown Artist",
-      src: process.env.PUBLIC_URL + "/music/ringaring.mp3"
-    }
+
 
     // Puedes seguir agregando más canciones de la misma manera
   ];
