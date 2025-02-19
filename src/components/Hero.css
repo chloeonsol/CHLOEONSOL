@@ -95,12 +95,22 @@ margin: 20px auto;
 }
 
 .purple-text {
-  color: #EF72D7; /* Color morado */
+  color: #e9c227; /* Color del texto */
   text-shadow: 
-    2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para la parte morada */
+    -2px -2px 0 white,  
+     2px -2px 0 white,  
+    -2px  2px 0 white,  
+     2px  2px 0 white,
+     2px  0px 0 white,
+    -2px  0px 0 white,
+     0px  2px 0 white,
+     0px -2px 0 white,
+     2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra negra opcional */
+  
   padding: 5px;
   margin-left: 5px;
   border-radius: 5px;
+  z-index: 10;
 }
 /* Hero Button - Dirección y Copiar */
 .address-button-container {

@@ -1,90 +1,136 @@
-/* 🔥 Contenedor general */
-.roadmap-container {
+/* 🔥 Wrapper general para evitar que se corte */
+.roadmap-wrapper {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(180deg, #20003c 0%, #6e00a5 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-y: auto;
-  padding: 40px 0;
-}
-
-/* 🔥 Pista del roadmap */
-.roadmap-track {
-  position: relative;
-  width: 6px;
-  height: 80%;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  background: linear-gradient(180deg, #20003c 0%, #6e00a5 100%);
+  overflow: hidden;
 }
 
-/* 🔥 Hitos del roadmap */
+/* 🔥 Contenedor del roadmap */
+.roadmap-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+
+}
+
+/* 🔥 Título */
+.roadmap-header {
+  width: 100%;
+  text-align: center;
+  padding-top: 3vh;
+  margin-bottom: 2vh;
+}
+
+.roadmap-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
+  animation: glow 2s infinite alternate;
+}
+
+.roadmap-subtitle {
+  font-size: 1.2rem;
+  color: #ddd;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+@keyframes glow {
+  0% { text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5); }
+  100% { text-shadow: 0px 0px 25px rgba(255, 255, 255, 1); }
+}
+
+/* 🔥 Pista */
+.roadmap-path {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 80%;
+}
+
+/* 🔥 Cuadros del roadmap */
 .roadmap-milestone {
   position: absolute;
-  left: -100px;
-  width: 250px;
-  padding: 15px;
-  text-align: left;
+  width: 360px;
+  padding: 28px;
+  text-align: center;
   background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-  opacity: 0.5;
-  transition: all 0.5s ease-in-out;
-}
-
-/* 💡 Efecto de iluminación cuando se alcanza el milestone */
-.roadmap-milestone.active {
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
   opacity: 1;
-  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+/* 💡 Hitos activos */
+.roadmap-milestone.active {
+  background: rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.6);
   transform: scale(1.1);
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 1);
 }
 
-/* 💡 Texto del milestone */
-.milestone-content h3 {
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: bold;
+/* 🔥 Texto oculto */
+.roadmap-milestone h3,
+.roadmap-milestone p {
+  color: rgba(255, 255, 255, 0.1);
+  filter: blur(5px);
+  transition: color 0.5s ease-in-out, filter 0.5s ease-in-out;
 }
 
-.milestone-content p {
-  color: #dddddd;
-  font-size: 14px;
-  margin-top: 5px;
+/* 💡 Texto visible */
+.roadmap-milestone.active h3,
+.roadmap-milestone.active p {
+  color: rgba(255, 255, 255, 1);
+  filter: blur(0px);
 }
 
-/* 🚗 Coche en movimiento con vibración */
+/* 🚗 Coche */
 .roadmap-car {
   position: absolute;
-  left: -40px;
-  width: 80px;
-  transition: top 2s ease-in-out;
+  width: 10%;
+  transition: top 0.4s ease-in-out, left 0.4s ease-in-out, transform 0.4s ease-in-out;
   animation: vibrate 0.2s infinite alternate;
 }
 
-/* 🔥 Animación de vibración del coche */
 @keyframes vibrate {
   0% { transform: translateY(0px) rotate(-1deg); }
   100% { transform: translateY(-2px) rotate(1deg); }
 }
 
-/* 📱 Responsividad */
+/* 📱 Responsive */
 @media (max-width: 768px) {
-  .roadmap-track {
-    height: 90%;
+  .roadmap-container {
+    height: 80vh;
   }
 
-  .roadmap-car {
-    width: 60px;
+  .roadmap-title {
+    font-size: 3rem;
   }
 
   .roadmap-milestone {
-    width: 200px;
-    left: -80px;
+    width: 300px;
+  }
+
+  .roadmap-car {
+    width: 110px;
   }
 }

@@ -1,8 +1,9 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import "../components/Roadmap.css";
 import carchloe from "../assets/carchloe.png";
 
 const milestones = [
+  { id: 0, text: "Start", description: "Beginning of the journey." },
   { id: 1, text: "1M - 10% supply locked for a year", description: "Lock 10% of supply for a year." },
   { id: 2, text: "5M - Shopify shop", description: "Launch the official Shopify store." },
   { id: 3, text: "10M - Start donations", description: "Begin community-driven charity donations." },
@@ -12,62 +13,57 @@ const milestones = [
 ];
 
 const Roadmap = () => {
-  const [activeMilestone, setActiveMilestone] = useState(0);
+  const [currentMilestone, setCurrentMilestone] = useState(0);
   const roadmapRef = useRef(null);
+  const carRef = useRef(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (roadmapRef.current) {
-        const rect = roadmapRef.current.getBoundingClientRect();
-        if (rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2) {
-          setActiveMilestone(1);
-        } else {
-          setActiveMilestone(0);
-        }
+  const moveCarToTarget = (targetIndex) => {
+    let index = currentMilestone;
+    let step = currentMilestone < targetIndex ? 1 : -1;
+    let speed = Math.max(200 / Math.abs(targetIndex - currentMilestone), 80);
+
+    const interval = setInterval(() => {
+      if (index !== targetIndex) {
+        index += step;
+        setCurrentMilestone(index);
+      } else {
+        clearInterval(interval);
       }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    if (activeMilestone > 0) {
-      let index = 1;
-      const interval = setInterval(() => {
-        if (index < milestones.length) {
-          setActiveMilestone(index);
-          index++;
-        } else {
-          clearInterval(interval);
-        }
-      }, 3000);
-      return () => clearInterval(interval);
-    }
-  }, [activeMilestone]);
+    }, speed);
+  };
 
   return (
-    <div className="roadmap-container" ref={roadmapRef}>
-      <div className="roadmap-track">
+    <div className="roadmap-wrapper">
+      <div className="roadmap-header">
+        <h1 className="roadmap-title">CHLOE'S ROADMAP</h1>
+        <p className="roadmap-subtitle">A journey through the milestones of success</p>
+      </div>
+
+      <div className="roadmap-container" ref={roadmapRef}>
+        <svg className="roadmap-path" viewBox="0 0 100 700" preserveAspectRatio="xMidYMid meet">
+          <path d="M 10 10 Q 30 100, 10 200 T 20 400 T 10 600" stroke="white" strokeWidth="4" fill="none" strokeDasharray="6" />
+        </svg>
+
         {milestones.map((milestone, index) => (
           <div
             key={milestone.id}
-            className={`roadmap-milestone ${activeMilestone >= index ? "active" : ""}`}
-            style={{ top: `${index * 20}%` }}
+            className={`roadmap-milestone ${currentMilestone >= index ? "active" : "inactive"}`}
+            style={{ top: `${index * 14 + 10}%`, left: `${(index % 2) * 40 + 20}%` }}
+            onClick={() => moveCarToTarget(index)}
           >
             <div className="milestone-content">
-              <h3>{milestone.text}</h3>
-              <p>{milestone.description}</p>
+              <h3 className={currentMilestone >= index ? "visible-text" : "hidden-text"}>{milestone.text}</h3>
+              <p className={currentMilestone >= index ? "visible-text" : "hidden-text"}>{milestone.description}</p>
             </div>
           </div>
         ))}
 
-        {/* Coche en movimiento */}
         <img
+          ref={carRef}
           src={carchloe}
           alt="CHLOE Car"
           className="roadmap-car"
-          style={{ top: `${activeMilestone * 20}%` }}
+          style={{ top: `${currentMilestone * 14 + 10}%`, left: `${(currentMilestone % 2) * 40 + 15}%`, transition: "top 0.4s ease-in-out, left 0.4s ease-in-out" }}
         />
       </div>
     </div>

@@ -1,0 +1,122 @@
+/* Estilos generales del reproductor */
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: linear-gradient(90deg, #4c68d7, #8b5cf6);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    z-index: 10000000;
+  }
+  
+  /* Diseño minimizado */
+  .music-mini {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 10px;
+    color: white;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .music-text {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  
+  .music-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .play-icon {
+    font-size: 20px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .music-mini:hover .play-icon {
+    transform: scale(1.2);
+  }
+  
+  /* Cuando está expandido */
+  .music-expanded {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 10px;
+    color: white;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .music-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex-grow: 1;
+  }
+  
+  .music-artist {
+    font-size: 12px;
+    opacity: 0.8;
+  }
+  
+  .music-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .control-icon {
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .control-icon:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Control de volumen */
+  .music-volume {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: auto;
+  }
+  
+  .volume-icon {
+    font-size: 16px;
+    color: white;
+  }
+  
+  .volume-slider {
+    width: 80px;
+    height: 5px;
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
+  
+  .volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .volume-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
