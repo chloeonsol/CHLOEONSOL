@@ -6,7 +6,7 @@ import "./MusicPlayer.css";
 // Lista de canciones
 const songs = [
     {
-        title: "Side Eye song",
+        title: "Side Eye",
         artist: "CHLOE",
         src: process.env.PUBLIC_URL + "/music/$CHLOE Side Eye Song.mp3"
       },
