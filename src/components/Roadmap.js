@@ -5,7 +5,7 @@ import "./Roadmap.css";
 const milestones = [
   { id: 1, label: "1M CHLOE", position: 150, description: "Making CTO and update DEXScreener Social media blitz, (Twitter, Telegram) First meme campaign & community engagement" },
   { id: 2, label: "10M CHLOE", position: 300, description: "Listings on CoinGecko & CoinMarketCap Partnerships with meme influencers Viral marketing push Spreading our charity plan everywhere " },
-  { id: 3, label: "100M CHLOE", position: 450, description: "Sending the first funds to help children» to 100m mcap level" },
+  { id: 3, label: "100M CHLOE", position: 450, description: "Sending the first funds to help children." },
   { id: 4, label: "500M CHLOE", position: 600, description: "Global attention to the project, first partnerships with charitable foundations" },
   { id: 5, label: "1B CHLOE", position: 750, description: "Maximizing impact on society. Sending more and more funds to charity. Partnerships with large institutions and foundations" },
 ];
