@@ -1,11 +1,12 @@
 /* Fondo oscuro con formas abstractas para la sección */
 .about-container {
-  background: linear-gradient(135deg, #202B2F, #131a1d); /* Fondo oscuro */
-  background-size: 300% 300%; /* Animamos el fondo */
-  padding: 50px 0; /* Espaciado en la parte superior e inferior */
+  background: radial-gradient(circle at center, #6E187F, #1B103A);
+  padding: 80px 0;
   position: relative;
-  animation: abstractBackground 10s ease-in-out infinite; /* Animación del fondo */
-  z-index: 0; /* Asegura que el contenido no quede por debajo de otros elementos */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
 }
 
 /* Animación para el fondo abstracto */
@@ -39,7 +40,7 @@
 .about-title {
   font-size: 60px;
   font-family: 'Bubble', cursive, sans-serif;
-  color: #EF72D7; /* Morado brillante */
+  color: #FEF0CD; /* Morado brillante */
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Sombra sutil */
   text-align: center;
   margin-bottom: 30px;
@@ -48,12 +49,14 @@
 /* Contenedor para la descripción del meme */
 .about-text-container {
   background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad */
-  border: 5px solid #EF72D7; /* Borde grueso morado */
+  border: 5px solid #532956; /* Borde grueso morado */
   border-radius: 10px;
   padding: 20px;
   margin: 20px auto;
   width: 80%;
   max-width: 1200px;
+  margin-bottom: 10px; /* Reducimos espacio entre texto e imagen */
+  z-index: 1000;
 }
 
 /* Descripción del texto */
@@ -76,8 +79,7 @@
   font-weight: bold;
   border: 3px solid #280000;
   border-radius: 30px;
-  padding: 12px 20px;
-  margin-top: 30px;
+  padding: 10px 18px;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
@@ -200,4 +202,71 @@ height: auto;
 max-height: 90vh;
 border-radius: 10px;
 
+}
+/* Animación de Zoom In - Zoom Out */
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Contenedor de la imagen */
+.bottom-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 10px auto; /* Reducimos los espacios */
+  position: relative;
+  width: 100%;
+  max-width: 750px;
+}
+
+/* Imagen ajustada para integrarse con el fondo y con animación */
+.bottom-image {
+  width: 100%;
+  max-width: 850px;
+  opacity: 0.85;
+  filter: brightness(0.95) contrast(1.1);
+  animation: zoomInOut 5s ease-in-out infinite; /* Aplicamos la animación */
+}
+
+
+/* Estilizar la dirección de la wallet como un botón clickeable */
+.charity-wallet {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  font-weight: bold;
+  color: #ffbb33;
+  text-decoration: underline;
+  max-width: 100%; /* Evita que se salga */
+  word-break: break-word; /* Permite que el texto se ajuste */
+  overflow-wrap: break-word; /* Alternativa para navegadores que lo necesiten */
+  text-align: center;
+  display: block;
+  margin: 10px auto; /* Centrado y espacio entre elementos */
+  white-space: normal; /* Permite que se divida en varias líneas */
+}
+
+.charity-wallet:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+/* Mensaje de copiado */
+.copied-text {
+  font-size: 14px;
+  font-weight: bold;
+  color: #4CAF50; /* Verde de confirmación */
+  margin-left: 8px;
+  transition: opacity 0.3s ease-in-out;
 }

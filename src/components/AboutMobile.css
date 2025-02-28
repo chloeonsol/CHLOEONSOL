@@ -1,28 +1,14 @@
-/* Fondo oscuro con formas abstractas para la sección (versión móvil) */
+/* 📌 Fondo oscuro con formas abstractas (Asegurando coherencia con la versión desktop) */
 .about-mobile-container {
-  background: linear-gradient(135deg, #202B2F, #131a1d); /* Fondo oscuro */
-  background-size: 300% 300%; /* Animamos el fondo */
-  padding: 30px 10px; /* Ajustamos el padding para móviles */
+  background: radial-gradient(circle at center, #6E187F, #1B103A); /* Mismo fondo que desktop */
+  background-size: cover;
+  padding: 50px 15px; /* Ajuste para mejor distribución */
   position: relative;
-  animation: abstractBackground 10s ease-in-out infinite; /* Animación del fondo */
-  z-index: 2; /* Asegura que el contenido no quede por debajo de otros elementos */
-  overflow-x: hidden; /* Evitar desplazamiento horizontal */
+  z-index: 2;
+  overflow-x: hidden;
 }
 
-/* Animación para el fondo abstracto */
-@keyframes abstractBackground {
-  0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
-
-/* Formas abstractas sutiles */
+/* 📌 Formas abstractas sutiles */
 .about-mobile-container::before {
   content: '';
   position: absolute;
@@ -30,36 +16,34 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
-  opacity: 0.1; /* Sutileza en el fondo */
+  opacity: 0.1;
   z-index: 1;
 }
 
-/* Título de la sección About */
+/* 📌 Título */
 .about-title-mobile {
-  font-size: 5vh; /* Ajustamos el tamaño en móviles */
+  font-size: 42px; /* Más grande para resaltar */
   font-family: 'Bubble', cursive, sans-serif;
-  color: #EF72D7; /* Morado brillante */
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Sombra sutil */
+  color: #FEF0CD; /* Mismo color que la versión desktop */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
   text-align: center;
   margin-bottom: 20px;
-  margin-top: 0px;
 }
 
-/* Contenedor para la descripción del meme */
+/* 📌 Contenedor de texto */
 .about-text-container-mobile {
-  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad */
-  border: 3px solid #EF72D7; /* Borde más delgado en móviles */
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 5px solid #532956; /* Misma tonalidad de desktop */
   border-radius: 10px;
-  padding: 15px;
-  margin: 10px auto;
-  width: 90%; /* Ajustamos el ancho */
-  max-width: 1000px; /* Evitamos desbordes */
+  padding: 18px;
+  margin: 15px auto;
+  width: 85%;
+  max-width: 1000px;
 }
 
-/* Descripción del texto */
+/* 📌 Descripción */
 .about-text-mobile {
-  font-size: 16px; /* Ajustamos el tamaño de la fuente */
+  font-size: 18px; /* Ajuste para mejor legibilidad */
   font-family: 'Bubble', cursive, sans-serif;
   color: #fff;
   text-align: center;
@@ -67,17 +51,16 @@
   margin-bottom: 20px;
 }
 
-/* Estilización del botón */
+/* 📌 Botón */
 .about-button-mobile {
   background: linear-gradient(145deg, #6a4c9c, #5b3c8d);
   color: white;
   font-family: 'Bubble', cursive, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   border: 3px solid #280000;
   border-radius: 30px;
-  padding: 12px 20px;
-  margin-top: 20px;
+  padding: 10px 18px;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
@@ -97,89 +80,73 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 
-/* Carrusel contenedor (versión móvil) */
-.carousel-container-mobile {
-  width: 100%;
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  position: relative;
-}
-
-/* Carrusel con desplazamiento manual */
-.carousel-mobile {
-  display: flex;
-  gap: 10px;
-  width: max-content;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  touch-action: pan-x; /* Permite solo desplazamiento horizontal */
-  z-index: 10000;
-}
-
-/* Ocultar scroll en dispositivos móviles */
-.carousel-mobile::-webkit-scrollbar {
-  display: none;
-}
-
-/* Cada item del carrusel */
-.carousel-item-mobile {
-  flex: 0 0 auto;
-  width: 80%;
-  max-width: 280px; /* Ajuste para evitar imágenes demasiado grandes */
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Ajustes en la animación de desplazamiento */
-@keyframes scrollImages {
+/* 📌 Imagen decorativa con animación de zoom */
+@keyframes zoomInOut {
   0% {
-    transform: translateX(0);
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
   }
   100% {
-    transform: translateX(-100%);
+    transform: scale(1);
   }
 }
 
-/* Estilo de las imágenes dentro del carrusel */
-.carousel-media-mobile {
-  width: 100%;
-  height: auto;
-  max-height: 250px;
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  transition: transform 0.2s ease-in-out;
-}
-
-/* Efecto de hover en imágenes */
-.carousel-media-mobile:hover {
-  transform: scale(1.05);
-}
-
-/* Modal de imágenes en móvil */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+/* 📌 Contenedor de la imagen */
+.bottom-image-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000000000;
+  margin: 30px 0;
+  position: relative;
 }
 
-.modal-content {
-  max-width: 90%;
-  max-height: 90%;
-}
-
-.modal-image {
+/* 📌 Imagen ajustada con animación */
+.bottom-image {
   width: 100%;
+  max-width: 650px; /* Ajuste responsivo */
   height: auto;
-  max-height: 90vh;
-  border-radius: 10px;
+  object-fit: contain;
+  opacity: 0.9; /* Ajuste sutil para integrarse con el diseño */
+  animation: zoomInOut 6s ease-in-out infinite;
+}
+
+/* 📌 Ajustes responsive */
+@media (max-width: 768px) {
+  .bottom-image {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title-mobile {
+    font-size: 34px;
+  }
+
+  .about-text-container-mobile {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .about-text-mobile {
+    font-size: 16px;
+  }
+
+  .about-button-mobile {
+    font-size: 16px;
+    padding: 10px 18px;
+  }
+
+  .bottom-image {
+    max-width: 85%;
+  }
+  .charity-wallet {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    text-align: center;
+    max-width: 100%;
+  }
 }

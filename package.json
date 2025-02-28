@@ -9,6 +9,7 @@
     "@solana/web3.js": "^1.98.0",
     "chloe-website": "file:",
     "framer-motion": "^12.4.3",
+    "gsap": "^3.12.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-fast-marquee": "^1.6.5",
