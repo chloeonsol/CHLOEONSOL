@@ -18,8 +18,12 @@
   height: 100%;
   opacity: 0.1;
   z-index: 1;
+  pointer-events: none; /* Evita bloquear interacciones */
 }
-
+.charity-wallet {
+  position: relative;
+  z-index: 9999; /* Asegura que esté encima de cualquier fondo */
+}
 /* 📌 Título */
 .about-title-mobile {
   font-size: 42px; /* Más grande para resaltar */
@@ -39,6 +43,7 @@
   margin: 15px auto;
   width: 85%;
   max-width: 1000px;
+  z-index: 10;
 }
 
 /* 📌 Descripción */
@@ -49,6 +54,7 @@
   text-align: center;
   letter-spacing: 1px;
   margin-bottom: 20px;
+  z-index: 1000;
 }
 
 /* 📌 Botón */
@@ -111,6 +117,9 @@
   opacity: 0.9; /* Ajuste sutil para integrarse con el diseño */
   animation: zoomInOut 6s ease-in-out infinite;
 }
+.charity-wallet{
+  z-index: 100000;
+}
 
 /* 📌 Ajustes responsive */
 @media (max-width: 768px) {
@@ -127,6 +136,7 @@
   .about-text-container-mobile {
     width: 90%;
     padding: 15px;
+    z-index: 1000;
   }
 
   .about-text-mobile {
@@ -148,5 +158,6 @@
     display: block;
     text-align: center;
     max-width: 100%;
+    z-index: 1000;
   }
 }

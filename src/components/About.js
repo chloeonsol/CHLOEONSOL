@@ -37,7 +37,7 @@ const About = () => {
             8RJpWZB7QPZW8jtokSfdVaDvpPZTi258qwfqbJcsNWSW
           </a>
           <br />
-          🔹 <a href="https://solscan.io/" target="_blank" rel="noopener noreferrer">Track transactions on Solscan</a>
+          🔹 <a href="https://solscan.io/account/8RJpWZB7QPZW8jtokSfdVaDvpPZTi258qwfqbJcsNWSW" target="_blank" rel="noopener noreferrer">Track transactions on Solscan</a>
           <br /><br />
           <strong>How It Works</strong>
           <br />
